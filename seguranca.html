@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Segurança do Computador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1b2a;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .conteudo {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #1e2a38;
+      border-radius: 10px;
+    }
+
+    .video {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .voltar {
+      display: block;
+      margin: 30px auto 0;
+      width: fit-content;
+      padding: 10px 20px;
+      background-color: #263238;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .voltar:hover {
+      background-color: #1c262b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Segurança do Computador</h1>
+  </header>
+
+  <div class="conteudo">
+<h2>OTIMIZAÇÃO E LIMPEZA INTERNA DO WINDOWS (SOFTWARE) COM FERRAMENTAS NATIVAS</h2>
+
+<h3>🔹 1. Limpeza de Arquivos Temporários (%temp% e temp)</h3>
+<p><strong>Como fazer:</strong><br>
+Windows + R → digite <code>%temp%</code> → pressione Enter<br>
+Selecione todos os arquivos → Shift + Delete<br>
+Repita o processo digitando <code>temp</code> (sem %) e apague tudo novamente</p>
+<p><strong>Importância:</strong> Remove arquivos residuais gerados por programas, atualizações e o próprio sistema. Pode recuperar vários GBs de espaço.</p>
+
+<h3>🗑️ 2. Esvaziar a Lixeira</h3>
+<p><strong>Como fazer:</strong><br>
+Clique com o botão direito na Lixeira → Esvaziar Lixeira</p>
+<p><strong>Dica:</strong> Arquivos excluídos ainda ocupam espaço se não forem removidos da lixeira.</p>
+
+<h3>🧹 3. Limpeza de Disco (cleanmgr)</h3>
+<p><strong>Como fazer:</strong><br>
+Windows + R → digite <code>cleanmgr</code><br>
+Selecione o disco C: (ou principal), marque tudo que for seguro e clique em OK</p>
+<p><strong>Dica avançada:</strong> Use "Limpar arquivos do sistema" para apagar atualizações antigas e arquivos de instalação.</p>
+
+<h3>⚙️ 4. Otimizar e Desfragmentar Unidades</h3>
+<p>Acesse o menu iniciar → digite "Desfragmentar" → clique em “Desfragmentar e Otimizar Unidades”<br>
+Selecione o disco e clique em “Otimizar”</p>
+<p><strong>Importância:</strong> Em HDDs melhora o acesso aos arquivos. Em SSDs, o TRIM é aplicado automaticamente.</p>
+
+<h3>🚫 5. Desabilitar Programas de Inicialização</h3>
+<p><strong>Como fazer:</strong><br>
+Ctrl + Shift + Esc → aba Inicializar → clique com o botão direito nos programas → Desabilitar</p>
+<p><strong>Exemplos:</strong> Spotify, Adobe Updater, Discord, Steam, OneDrive</p>
+
+<h3>📡 6. Desativar Aplicativos em Segundo Plano</h3>
+<p>Configurações → Aplicativos → Aplicativos em segundo plano<br>
+<strong>Vantagem:</strong> Reduz o consumo de memória e CPU.</p>
+
+<h3>⛔ 7. Finalizar Processos Pesados Manualmente</h3>
+<p><strong>Como fazer:</strong><br>
+Ctrl + Shift + Esc → aba Processos → ordene por CPU ou Memória → clique com botão direito e selecione “Finalizar tarefa”</p>
+<p><strong>Atenção:</strong> Evite encerrar processos do sistema.</p>
+
+<h3>🧠 8. Ajustar Efeitos Visuais</h3>
+<p>Windows + R → <code>SystemPropertiesPerformance</code><br>
+Selecione "Ajustar para obter um melhor desempenho" ou escolha manualmente o que desativar</p>
+
+<h3>📅 9. Desativar Tarefas Agendadas</h3>
+<p>Windows + R → digite <code>taskschd.msc</code><br>
+Acesse Biblioteca do Agendador de Tarefas → clique com botão direito → Desativar</p>
+
+<h3>🧰 10. Desinstalar Programas Inúteis</h3>
+<p>Windows + R → digite <code>msi.cpl</code><br>
+Ordene por Tamanho ou Data e desinstale programas não utilizados</p>
+
+<h3>🧼 11. Sensor de Armazenamento (Storage Sense)</h3>
+<p>Configurações → Sistema → Armazenamento → Ativar Sensor de Armazenamento<br>
+Configure para excluir arquivos temporários, downloads antigos e esvaziar a lixeira automaticamente</p>
+
+<h3>📊 12. Usar o Monitor de Recursos (resmon)</h3>
+<p>Windows + R → digite <code>resmon</code><br>
+Visualize os processos que mais consomem CPU, Disco, Memória e Rede</p>
+
+<h3>🛠️ 13. Verificar Inicialização Oculta (MSConfig)</h3>
+<p>Windows + R → digite <code>msconfig</code><br>
+Na aba Serviços, marque “Ocultar serviços Microsoft” → desative os desnecessários</p>
+
+<h3>🔍 14. Verificar Corrupções com SFC</h3>
+<p>Abrir o Prompt de Comando como administrador e digitar:<br>
+<code>sfc /scannow</code></p>
+<p>O sistema fará a verificação e corrigirá arquivos corrompidos.</p>
+
+<h3>🔄 15. Reiniciar o PC com Frequência</h3>
+<p>Mesmo com o uso de suspensão, reiniciar libera memória e atualiza processos.<br>
+<strong>Recomendação:</strong> reiniciar ao menos 1 vez por dia.</p>
+
+<h3>🔧 16. Manter o Windows Atualizado</h3>
+<p>Configurações → Windows Update → Verificar atualizações</p>
+<p><strong>Motivo:</strong> Atualizações corrigem falhas, melhoram o desempenho e aumentam a segurança.</p>
+
+<hr>
+
+<h3>✅ Resumo Final de Otimização Interna com Recursos Nativos</h3>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; background-color: #1e2a38; color: white; border-collapse: collapse;">
+  <tr><th>Ação</th><th>Função Principal</th><th>Comando/Caminho</th></tr>
+  <tr><td>Limpar arquivos temporários</td><td>Liberação de espaço</td><td>%temp%, temp</td></tr>
+  <tr><td>Esvaziar a Lixeira</td><td>Liberação de espaço</td><td>Botão direito na Lixeira</td></tr>
+  <tr><td>Limpeza de Disco</td><td>Liberação de espaço</td><td>cleanmgr</td></tr>
+  <tr><td>Desfragmentar unidades</td><td>Acelerar HDDs</td><td>Desfragmentar e Otimizar Unidades</td></tr>
+  <tr><td>Desabilitar inicialização</td><td>Acelerar boot</td><td>Ctrl + Shift + Esc</td></tr>
+  <tr><td>Aplicativos em segundo plano</td><td>Reduzir uso de RAM</td><td>Configurações → Aplicativos</td></tr>
+  <tr><td>Finalizar tarefas pesadas</td><td>Alívio imediato de CPU</td><td>Gerenciador de Tarefas</td></tr>
+  <tr><td>Ajustar efeitos visuais</td><td>Mais desempenho</td><td>SystemPropertiesPerformance</td></tr>
+  <tr><td>Remover tarefas agendadas</td><td>Acelerar carregamento</td><td>taskschd.msc</td></tr>
+  <tr><td>Desinstalar programas inúteis</td><td>Liberar espaço</td><td>msi.cpl</td></tr>
+  <tr><td>Sensor de armazenamento</td><td>Automatizar limpeza</td><td>Configurações > Armazenamento</td></tr>
+  <tr><td>Verificar com Resmon</td><td>Diagnóstico de consumo</td><td>resmon</td></tr>
+  <tr><td>Verificar arquivos do sistema</td><td>Corrigir falhas</td><td>sfc /scannow</td></tr>
+  <tr><td>MSConfig</td><td>Gerenciar serviços ocultos</td><td>msconfig</td></tr>
+  <tr><td>Reiniciar com frequência</td><td>Manutenção geral</td><td>Reinício manual</td></tr>
+  <tr><td>Atualizar o Windows</td><td>Melhorar estabilidade</td><td>Windows Update</td></tr>
+</table>
+
+
+    <div class="video">
+  <h2>Assista ao vídeo explicativo:</h2>
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/WULwZ6v_Ai8"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+    <a href="index.html" class="btn azul">⬅ VOLTAR</a>
+  </div>
+
+</body>
+</html>
