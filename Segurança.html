@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Segurança do Computador</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d1b2a;
+      color: white;
+      overflow-x: hidden;
+    }
+    canvas#bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      color: #00ffc3;
+      text-shadow: 0 0 15px #00ffc3;
+      margin-bottom: 30px;
+    }
+    h2, h3 {
+      color: #80deea;
+      margin-top: 30px;
+    }
+    p, li {
+      line-height: 1.6;
+      color: #eceff1;
+    }
+    code {
+      background: #263238;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #80cbc4;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      color: white;
+    }
+    table th, table td {
+      border: 1px solid #455a64;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background-color: #263238;
+    }
+    .btn-voltar {
+      display: block;
+      margin: 50px auto 0;
+      width: fit-content;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #00c853, #00e5ff);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #00e5ff;
+      transition: all 0.3s ease;
+    }
+    .btn-voltar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px #00ffc3;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div class="container">
+    <h1><i class="fas fa-shield-alt"></i> Segurança do Computador</h1>
+
+    <h2>⚡ FOCO: SEGURANÇA</h2>
+
+    <h3>✅ VERIFICAÇÕES DE SEGURANÇA</h3>
+    <p>Nesta seção, você vai aprender a fazer verificações manuais de segurança no seu Windows, usando ferramentas internas e sem instalar nada novo. Ideal para usuários iniciantes que querem aprender o básico da defesa do sistema.</p>
+
+    <h3>🔧 Painel de Controle (Windows + R)</h3>
+    <p><strong>MRT – Ferramenta de Remoção de Software Mal-intencionado</strong><br>
+    Pressione Windows + R, digite <code>mrt</code> e pressione Enter. Execute a verificação completa para detectar e remover malwares.</p>
+    <p><strong>Segurança e Manutenção:</strong> Painel de Controle > Sistema e Segurança > Segurança e Manutenção. Verifique se há alertas sobre antivírus, firewall ou atualizações.</p>
+    <p><strong>Windows Defender Firewall:</strong> Painel de Controle > Sistema e Segurança > Windows Defender Firewall. Verifique se está ativado e revise exceções.</p>
+
+    <h3>📃 Prompt de Comando (CMD)</h3>
+    <ul>
+      <li><strong>Verificar arquivos protegidos:</strong> <code>sfc /scannow</code></li>
+      <li><strong>Verificação de disco:</strong> <code>chkdsk /f</code></li>
+      <li><strong>Ver conexões ativas:</strong> <code>netstat -ano</code></li>
+      <li><strong>Verificar drivers:</strong> <code>driverquery</code></li>
+    </ul>
+
+    <h3>💡 PowerShell</h3>
+    <ul>
+      <li><strong>Analisar processos suspeitos:</strong> <code>Get-Process | Sort-Object CPU -Descending</code></li>
+      <li><strong>Ver programas de inicialização:</strong> <code>Get-CimInstance Win32_StartupCommand</code></li>
+      <li><strong>Atualizações instaladas:</strong> <code>Get-HotFix</code></li>
+      <li><strong>Portas abertas:</strong> <code>Get-NetTCPConnection</code></li>
+    </ul>
+
+    <h3>🚫 Verificação de Links e Programas Suspeitos</h3>
+    <p>Use ferramentas online para verificar arquivos e links:</p>
+    <table>
+      <tr><th>Ferramenta</th><th>Tipo</th><th>Função</th><th>Link</th></tr>
+      <tr><td>VirusTotal</td><td>Site</td><td>Analisa com +70 antivírus</td><td>virustotal.com</td></tr>
+      <tr><td>Jotti’s Scan</td><td>Site</td><td>Analisa arquivos</td><td>virusscan.jotti.org</td></tr>
+      <tr><td>MetaDefender</td><td>Site</td><td>Verifica arquivos, IPs e domínios</td><td>metadefender.opswat.com</td></tr>
+      <tr><td>URLVoid</td><td>Site</td><td>Reputação de sites</td><td>urlvoid.com</td></tr>
+      <tr><td>Kaspersky Portal</td><td>Site</td><td>Links, IPs e domínios</td><td>opentip.kaspersky.com</td></tr>
+      <tr><td>Hybrid Analysis</td><td>Site</td><td>Análise de arquivos</td><td>hybrid-analysis.com</td></tr>
+      <tr><td>Any.Run</td><td>Site</td><td>Simulação sandbox</td><td>any.run</td></tr>
+      <tr><td>Virusdesk</td><td>Site</td><td>Verificação básica</td><td>virusdesk.kaspersky.com</td></tr>
+    </table>
+
+    <h2>🛡️ RECOMENDAÇÕES DE ANTIVÍRUS E APLICATIVOS DE SEGURANÇA</h2>
+
+    <h3>🕵️ Antivírus Recomendados</h3>
+    <table>
+      <tr><th>Nome</th><th>Gratuito?</th><th>Destaques</th></tr>
+      <tr><td>Microsoft Defender</td><td>Sim</td><td>Já incluso no Windows</td></tr>
+      <tr><td>Bitdefender</td><td>Sim / Pago</td><td>Leve, silencioso</td></tr>
+      <tr><td>Kaspersky</td><td>Sim / Pago</td><td>Forte proteção</td></tr>
+      <tr><td>Avast / AVG</td><td>Sim</td><td>Fáceis de usar</td></tr>
+      <tr><td>Norton 360</td><td>Pago</td><td>Completo com VPN e backup</td></tr>
+      <tr><td>ESET NOD32</td><td>Pago</td><td>Eficaz e leve</td></tr>
+      <tr><td>Panda Dome</td><td>Sim / Pago</td><td>Interface simples</td></tr>
+      <tr><td>Sophos Home</td><td>Sim / Pago</td><td>Ideal para famílias</td></tr>
+      <tr><td>Trend Micro</td><td>Pago</td><td>Ótimo contra phishing</td></tr>
+    </table>
+
+    <h3>🛠️ Ferramentas Complementares</h3>
+    <table>
+      <tr><th>Nome</th><th>Tipo</th><th>Função</th></tr>
+      <tr><td>Malwarebytes</td><td>Anti-malware</td><td>Remove malwares ocultos</td></tr>
+      <tr><td>AdwCleaner</td><td>Anti-adware</td><td>Remove barras e pop-ups</td></tr>
+      <tr><td>GlassWire</td><td>Firewall visual</td><td>Monitora conexões</td></tr>
+      <tr><td>RogueKiller</td><td>Antitrojan</td><td>Remove trojans</td></tr>
+      <tr><td>Spybot</td><td>Antispyware</td><td>Bloqueia rastreadores</td></tr>
+      <tr><td>Comodo Firewall</td><td>Firewall</td><td>Controla apps na internet</td></tr>
+      <tr><td>HitmanPro</td><td>Scanner</td><td>Verificação adicional</td></tr>
+      <tr><td>Emsisoft</td><td>Anti-malware</td><td>Motor de varredura dupla</td></tr>
+      <tr><td>Zemana</td><td>Anti-malware</td><td>Leve e portátil</td></tr>
+      <tr><td>O&O ShutUp10++</td><td>Privacidade</td><td>Desativa rastreamento</td></tr>
+    </table>
+
+    <h3>🔗 Sites confiáveis para baixar programas</h3>
+    <ul>
+      <li><strong>Ninite:</strong> Instala programas com segurança — ninite.com</li>
+      <li><strong>FileHippo:</strong> Biblioteca verificada — filehippo.com</li>
+      <li><strong>Softpedia:</strong> Repositório com análises — softpedia.com</li>
+      <li><strong>MajorGeeks:</strong> Ferramentas técnicas — majorgeeks.com</li>
+      <li><strong>FossHub:</strong> Downloads rápidos — fosshub.com</li>
+      <li><strong>SnapFiles:</strong> Softwares revisados — snapfiles.com</li>
+    </ul>
+
+    <p><strong>⚠ DICA FINAL:</strong> Nunca use dois antivírus ativos ao mesmo tempo. Prefira um principal e os outros como verificação sob demanda.</p>
+
+    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> VOLTAR</a>
+  </div>
+
+  <script>
+    const c = document.createElement('canvas');
+    c.id = 'bg';
+    document.body.appendChild(c);
+    const ctx = c.getContext('2d');
+    let w, h;
+    function resize() {
+      w = c.width = innerWidth;
+      h = c.height = innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    const parts = [...Array(60)].map(() => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r: 1 + Math.random() * 2
+    }));
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(0,255,174,.6)';
+      parts.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

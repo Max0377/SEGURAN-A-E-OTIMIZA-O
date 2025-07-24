@@ -3,90 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <title>Segurança e Otimização</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Estilo da página toda */
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1b2a; /* fundo escuro azul */
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
       color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0d1b2a;
+    }
+
+    .container {
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-
-    /* Centraliza o conteúdo e limita a largura */
-    .container {
       text-align: center;
-      max-width: 800px;
-      padding: 20px;
+      padding: 40px;
     }
 
-    /* Título principal */
     h1 {
-      font-size: 2.8em;
-      font-weight: bold;
+      font-size: 3em;
+      color: #00ffae;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00ffae;
+    }
+
+    .subtitulo {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      color: #90caf9;
+      min-height: 24px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      width: 250px;
+      transition: 0.3s;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 255, 174, 0.2);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 174, 0.4);
+    }
+
+    .card i {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #00ffae;
+    }
+
+    .card h2 {
       margin-bottom: 10px;
     }
 
-    /* Subtítulo */
-    .subtitulo {
-      font-size: 1.2em;
-      color: #90a4ae; /* cinza azulado */
-      margin-bottom: 40px;
-      letter-spacing: 2px;
-    }
-
-    /* Espaço onde os botões vão */
-    .botoes {
-      display: flex;
-      justify-content: center;
-      gap: 20px; /* espaço entre os botões */
-      flex-wrap: wrap;
-    }
-
-    /* Estilo base dos botões */
-    .btn {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      text-decoration: none;
-      color: white;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: bold;
-    }
-
-    /* Botão verde */
-    .btn.verde {
-      background-color: #00c853;
-    }
-    .btn.verde:hover {
-      background-color: #00b144;
-    }
-
-    /* Botão azul escuro */
-    .btn.azul {
-      background-color: #263238;
-    }
-    .btn.azul:hover {
-      background-color: #1c262b;
+    .card p {
+      font-size: 0.95em;
+      color: #cfd8dc;
     }
   </style>
 </head>
 <body>
-
+  <canvas id="bg"></canvas>
   <div class="container">
-    <h1>SEGURANÇA E OTIMIZAÇÃO</h1>
-    <p class="subtitulo">TÓPICO EM FOCO</p>
-
-    <div class="botoes">
-      <a href="seguranca.html" class="btn verde">SEGURANÇA</a>
-      <a href="otimizacao.html" class="btn azul">OTIMIZAÇÃO</a>
+    <h1>Segurança & Otimização</h1>
+    <p class="subtitulo" id="typed"></p>
+    <div class="cards">
+      <a href="Segurança.html" class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h2>Segurança</h2>
+        <p>Proteja seus dados e mantenha seu sistema livre de ameaças.</p>
+      </a>
+      <a href="otimizacao.html" class="card">
+        <i class="fas fa-rocket"></i>
+        <h2>Otimização</h2>
+        <p>Acelere seu computador com ferramentas simples e eficazes.</p>
+      </a>
     </div>
   </div>
 
-</body>
+  <script>
+    // Efeito de texto digitando
+    const msg = "Escolha uma área para começar ▶";
+    let i = 0;
+    const el = document.getElementById('typed');
+    (function type() {
+      if (i <= msg.length) {
+        el.textContent = msg.slice(0, i++);
+        setTimeout(type, 60);
+      }
+    })();
 
+    // Fundo animado com partículas
+    const c = document.getElementById('bg'), ctx = c.getContext('2d');
+    let w, h;
+    function rs() {
+      w = c.width = innerWidth;
+      h = c.height = innerHeight;
+    }
+    rs();
+    addEventListener('resize', rs);
+    const parts = [...Array(60)].map(() => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r: 1 + Math.random() * 2
+    }));
+    function anim() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(0,255,174,.7)';
+      parts.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(anim);
+    }
+    anim();
+  </script>
+</body>
 </html>
